@@ -5,7 +5,7 @@ import pandas as pd
 conn = mysql.connector.connect(
     user='root',
     password='12345',
-    host='localhost',
+    host='host.docker.internal', # localhost of host and not the container 
     port='3306',
     database='mock_data'
 )
@@ -29,7 +29,7 @@ cursor.execute(create_table_query)
 print("Places table created successfully.")
 
 # Read CSV file into a DataFrame
-df = pd.read_csv('C:/Users/Ricar/OneDrive/Desktop/PROJECT01/recruitment-test-data-engineering/data/places.csv')
+df = pd.read_csv('places.csv')
 
 # Iterate over rows and insert into Places table
 for index, row in df.iterrows():
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS People (
 cursor.execute(create_people_table_query)
 
 # Read People CSV file into a DataFrame
-people_df = pd.read_csv('C:/Users/Ricar/OneDrive/Desktop/PROJECT01/recruitment-test-data-engineering/data/people.csv')
+people_df = pd.read_csv('people.csv')
 
 # Iterate over each row in the People DataFrame
 for index, row in people_df.iterrows():
