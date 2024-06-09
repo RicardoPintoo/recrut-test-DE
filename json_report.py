@@ -16,7 +16,6 @@ people_table = sqlalchemy.Table('people', metadata, autoload_with=engine)
 # Define the path to the JSON file
 json_file_path = os.getcwd() + '/data/example_python.json'
 
-
 # Check if the JSON file exists
 #if not os.path.exists(json_file_path):
     #with open(json_file_path, 'w') as json_file:
